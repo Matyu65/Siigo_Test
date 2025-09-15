@@ -31,10 +31,9 @@ public class LlenarTerceroTask implements Task {
                         )
         );
         actor.attemptsTo(
-          // Ejemplo: desplegar un select en shadow
           ClickInShadow.on(
-            By.cssSelector("siigo-dropdownlist-web[data-id='person-type']"),  // HOST
-            By.cssSelector(".mdc-select__anchor"))// INNER
+            By.cssSelector("siigo-dropdownlist-web[data-id='person-type']"),
+            By.cssSelector(".mdc-select__anchor"))
           );
 
        /* actor.attemptsTo(
