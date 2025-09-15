@@ -1,7 +1,8 @@
 package co.com.siigo.stepdefinitions.crearcliente;
 
 
-
+import co.com.siigo.interactions.menu.SelecionarOpcionMenu;
+import co.com.siigo.task.crear_clietne.LlenarTerceroTask;
 import co.com.siigo.task.login.LoginTask;
 import co.com.siigo.task.opensite.OpenSiteTask;
 import co.com.siigo.utilities.datos.CargarDatos;
@@ -33,6 +34,14 @@ public class crearClienteStepDefinitions {
     public void realizaElloginDeLaAplicacion() throws Exception {
         theActorInTheSpotlight().attemptsTo(OpenSiteTask.openSitehttps());
         theActorInTheSpotlight().attemptsTo(LoginTask.authentificarUsuario());
+    }
+    @Y("^selecciona la opcion del menu$")
+    public void seleccionaLaOpcionDelMenu() throws Exception {
+        theActorInTheSpotlight().attemptsTo(SelecionarOpcionMenu.seleccionarOpcion());
+    }
+    @Cuando("^Ingresa la informacion del cliente$")
+    public void Ingresalainformaciondelcliente() throws Exception {
+        theActorInTheSpotlight().attemptsTo(LlenarTerceroTask.con());
     }
 
 }

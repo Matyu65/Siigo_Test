@@ -1,5 +1,6 @@
 package co.com.siigo.task.login;
 
+import co.com.siigo.interactions.comunes.Esperar;
 import co.com.siigo.utilities.datos.DatosPrueba;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -14,6 +15,7 @@ public class LoginTask implements Task {
     public <T extends Actor> void performAs(T actor) {
     actor.attemptsTo(
             /*Ingreso de usuario y contraseña*/
+            Esperar.esperarSegundos(5000),
             Click.on(TXT_USER),
             Type.theValue(DatosPrueba.obtener("usuario")).into(TXT_USER),
             Click.on(TXT_PASS),
