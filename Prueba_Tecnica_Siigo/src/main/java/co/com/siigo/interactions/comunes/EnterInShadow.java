@@ -15,7 +15,6 @@ public class EnterInShadow implements Interaction {
     private final String text;
     private final Duration timeout;
 
-    // Debe existir este constructor con el mismo orden de params que usas en Tasks.instrumented
     public EnterInShadow(By host, By innerInput, String text, Duration timeout) {
         this.host = host;
         this.innerInput = innerInput;
@@ -23,7 +22,6 @@ public class EnterInShadow implements Interaction {
         this.timeout = timeout;
     }
 
-    // ==== BUILDER para API fluida ====
     public static ValueBuilder value(String text) {
         return new ValueBuilder(text);
     }
@@ -44,7 +42,6 @@ public class EnterInShadow implements Interaction {
             return Tasks.instrumented(EnterInShadow.class, host, innerInput, text, timeout);
         }
     }
-    // ==== FIN BUILDER ====
 
     @Override
     public <T extends Actor> void performAs(T actor) {

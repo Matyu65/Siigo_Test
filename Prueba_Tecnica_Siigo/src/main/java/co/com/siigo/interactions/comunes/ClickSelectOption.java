@@ -32,7 +32,7 @@ public class ClickSelectOption implements Task {
 
         SearchContext menuRoot;
         try {
-            menuRoot = menuHost.getShadowRoot();  // puede ser null
+            menuRoot = menuHost.getShadowRoot();
         } catch (Exception e) {
             menuRoot = null;
         }

@@ -6,8 +6,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class ShadowWaits {
-
-    // Espera hasta que exista el elemento "inner" dentro del shadow del "host"
     public static WebElement waitForElementInShadow(WebDriver driver, By host, By inner, Duration timeout) {
         WebDriverWait wait = new WebDriverWait(driver, timeout);
         return wait.until((ExpectedCondition<WebElement>) d -> {
@@ -16,8 +14,6 @@ public class ShadowWaits {
             return sr.findElement(inner);
         });
     }
-
-    // Espera a que el host tenga shadowRoot inicializado
     public static WebElement waitForHostWithShadow(WebDriver driver, By host, Duration timeout) {
         WebDriverWait wait = new WebDriverWait(driver, timeout);
         return wait.until(d -> {
